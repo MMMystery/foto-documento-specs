@@ -1,0 +1,134 @@
+{
+  "checkedAt": "2026-10-05",
+  "note": "Medidas em milímetros. headMm = altura da cabeça do queixo ao topo do crânio (ou do cabelo, conforme a regra). topMm = margem do topo da foto ao topo da cabeça. Quando a fonte oficial não fixa um número, usamos a orientação ICAO/OACI (face 70–80% da altura) e marcamos 'basis'. crown: 'hair' = mede até o topo do cabelo (3x4 pela orientação da ANAC; EUA 'top of the head including hair'); 'skull' = até o topo do crânio (Canadá e ICAO), cabelo volumoso pode ser cortado no topo.",
+  "specs": {
+    "3x4": {
+      "label": "Foto 3x4",
+      "wMm": 30,
+      "hMm": 40,
+      "headMm": [
+        28,
+        32
+      ],
+      "headTargetMm": 30,
+      "topMm": 2.5,
+      "bg": [
+        "#ffffff",
+        "#dbe9f7"
+      ],
+      "dpi": 300,
+      "glasses": "evitar",
+      "uses": [
+        "Currículo",
+        "Matrícula escolar",
+        "Carteirinha de estudante",
+        "Crachá",
+        "Concursos públicos",
+        "OAB e conselhos de classe",
+        "Cadastros em geral"
+      ],
+      "basis": "Não existe norma nacional única para a 3x4; usamos a orientação de foto padrão OACI publicada pela ANAC (gov.br): 30 x 40 mm, cabeça ≈ 30 mm, cerca de 2,5 mm do topo, fundo branco.",
+      "source": "https://www.gov.br/anac/pt-br/assuntos/regulados/profissionais-da-aviacao-civil/processo-de-licencas-e-habilitacoes/arquivos/copy2_of_ORIENTAFOTOPADRAOOACI.pdf",
+      "crown": "hair"
+    },
+    "5x7": {
+      "label": "Foto 5x7 para passaporte",
+      "wMm": 50,
+      "hMm": 70,
+      "headMm": [
+        31,
+        36
+      ],
+      "headTargetMm": 34,
+      "topMm": 6,
+      "bg": [
+        "#ffffff"
+      ],
+      "dpi": 300,
+      "glasses": "proibido",
+      "uses": [
+        "Passaporte de criança com menos de 5 anos",
+        "Passaporte pedido em consulado (e-consular)"
+      ],
+      "basis": "A Polícia Federal fotografa no posto quem tem 5 anos ou mais. A foto 5x7 em papel só é pedida para crianças menores de 5 anos e em alguns consulados. Fundo branco, sem óculos.",
+      "source": "https://www.gov.br/pf/pt-br/assuntos/passaporte",
+      "crown": "hair"
+    },
+    "eua": {
+      "label": "Foto para visto americano (2x2 pol.)",
+      "wMm": 51,
+      "hMm": 51,
+      "headMm": [
+        25,
+        35
+      ],
+      "headTargetMm": 30,
+      "topMm": 7,
+      "bg": [
+        "#ffffff"
+      ],
+      "dpi": 300,
+      "digital": {
+        "px": 600,
+        "maxKb": 240
+      },
+      "glasses": "proibido",
+      "uses": [
+        "Visto americano (DS-160): arquivo digital 600 x 600 px",
+        "Green Card e loteria de vistos (DV)",
+        "Foto impressa 5 x 5 cm para a entrevista"
+      ],
+      "basis": "Departamento de Estado dos EUA: cabeça entre 1 e 1 3/8 polegada (25–35 mm), 50–69% da altura; fundo branco ou quase branco; sem óculos; arquivo digital quadrado em JPEG.",
+      "source": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/photos.html",
+      "crown": "hair"
+    },
+    "canada": {
+      "label": "Foto para visto do Canadá (35x45)",
+      "wMm": 35,
+      "hMm": 45,
+      "headMm": [
+        31,
+        36
+      ],
+      "headTargetMm": 33.5,
+      "topMm": 4,
+      "bg": [
+        "#ffffff",
+        "#f2f2f2"
+      ],
+      "dpi": 300,
+      "glasses": "permitido sem reflexo",
+      "uses": [
+        "Visto de visitante (TRV)",
+        "Visto de estudante e de trabalho"
+      ],
+      "basis": "IRCC (governo do Canadá): pelo menos 35 x 45 mm, cabeça do queixo ao topo entre 31 e 36 mm, fundo branco ou claro.",
+      "source": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/temporary-resident-visa-application-photograph-specifications.html",
+      "crown": "skull"
+    },
+    "schengen": {
+      "label": "Foto para visto Schengen (35x45)",
+      "wMm": 35,
+      "hMm": 45,
+      "headMm": [
+        32,
+        36
+      ],
+      "headTargetMm": 34,
+      "topMm": 4,
+      "bg": [
+        "#ffffff",
+        "#eeeeee"
+      ],
+      "dpi": 300,
+      "glasses": "evitar",
+      "uses": [
+        "Visto Schengen (Itália, Portugal, Espanha, França, Alemanha…)",
+        "Cidadania e residência na Europa"
+      ],
+      "basis": "Código de Vistos da UE (Regulamento 810/2009) e norma ICAO 9303: 35 x 45 mm, face de 70–80% da altura (32–36 mm), fundo claro e uniforme.",
+      "source": "https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/visa-policy_en",
+      "crown": "skull"
+    }
+  }
+}
