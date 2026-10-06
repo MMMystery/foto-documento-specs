@@ -39,11 +39,18 @@ export function sheetLayout(spec, sheet = { wMm: 152.4, hMm: 101.6 }, gapMm = 2,
 // Grava a densidade (DPI) no cabeçalho JFIF de um JPEG, para a foto sair no tamanho certo ao imprimir.
 export function setJpegDpi(bytes, dpi) {
   const b = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
-  // SOI FFD8, APP0 FFE0, length(2), 'JFIF\0'(5), version(2), units(1) @13, Xdensity(2) @14, Ydensity(2) @16
-  if (b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff && b[3] === 0xe0 && b[6] === 0x4a && b[7] === 0x46 && b[8] === 0x49 && b[9] === 0x46) {
+  if (b[0] !== 0xff || b[1] !== 0xd8) return b; // não é JPEG
+  // Caso comum (Chrome, Firefox): SOI + APP0 'JFIF\0' logo no início. units @13, Xdensity @14, Ydensity @16.
+  if (b[2] === 0xff && b[3] === 0xe0 && b[6] === 0x4a && b[7] === 0x46 && b[8] === 0x49 && b[9] === 0x46 && b[10] === 0) {
     b[13] = 1; b[14] = dpi >> 8; b[15] = dpi & 255; b[16] = dpi >> 8; b[17] = dpi & 255;
+    return b;
   }
-  return b;
+  // Outros codificadores (ex.: Safari) podem começar com APP1/EXIF ou sem APP0: insere um APP0 JFIF de 18 bytes logo após o SOI.
+  // (Obrigado ao Florian, no TabNews, por apontar o caso.)
+  const app0 = [0xff, 0xe0, 0x00, 0x10, 0x4a, 0x46, 0x49, 0x46, 0x00, 0x01, 0x01, 0x01, dpi >> 8, dpi & 255, dpi >> 8, dpi & 255, 0x00, 0x00];
+  const out = new Uint8Array(b.length + app0.length);
+  out.set(b.subarray(0, 2), 0); out.set(app0, 2); out.set(b.subarray(2), 2 + app0.length);
+  return out;
 }
 
 // Checagens de conformidade a partir de medidas simples (ângulos em graus, valores 0–1).
