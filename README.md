@@ -1,6 +1,8 @@
 # Especificações de fotos para documentos (Brasil e vistos) + recorte no navegador
 
-Medidas de **foto 3x4, foto 5x7 para passaporte, visto americano (2x2 / DS-160), visto do Canadá e visto Schengen** em JSON, cada uma com a **fonte oficial**, e um motor em JavaScript que recorta a foto pela norma **dentro do navegador** (a imagem não sai do aparelho).
+Medidas de **foto 3x4, foto 5x7 para passaporte, visto americano (2x2 / DS-160), visto do Canadá e visto Schengen** em JSON com fontes, e um motor em JavaScript para recorte e folhas de impressão **dentro do navegador** (a imagem não sai do aparelho nesse editor).
+
+**Escopo da 3x4:** não existe uma norma nacional única para todos os usos. A referência ANAC/OACI abaixo é uma orientação de enquadramento no contexto de aviação; não garante aceitação por escolas, empresas, consulados ou outros órgãos. Confirme sempre as regras de quem recebe a foto, inclusive restrições a editar o fundo.
 
 Usado em produção no **[FotoApta — foto 3x4 online grátis e sem marca d’água](https://fotoapta.com/)**.
 
@@ -36,8 +38,12 @@ Referência informativa. Quem decide se a foto é aceita é o órgão que a rece
 
 ## Licença
 
-Código: MIT. Dados (`specs.json`): CC BY 4.0 — cite “FotoApta (https://fotoapta.com)”.
+Código: MIT. Dados (`specs.json`): CC BY 4.0 — cite [FotoApta](https://fotoapta.com/).
 
 ---
 
-**English:** Official ID-photo specs (Brazil 3x4, Brazilian passport 5x7, US visa 2x2 / DS-160, Canada visa, Schengen visa) as JSON with sources, plus a browser-only cropping engine built on MediaPipe. Live tool: https://fotoapta.com/
+**English:** Sourced document-photo dimensions and a browser-only cropping/print-sheet engine built on MediaPipe. The Brazil 3x4 entry is a reference based on ANAC guidance, not a universal national acceptance rule. Always check the receiving authority’s current requirements.
+
+Free document editor: [FotoApta in English](https://fotoapta.com/en/). This repository covers the local editor engine and specification data, not the complete production service. The separate AI professional-portrait workflow sends selfies to external generation providers and offers optional paid output; it is not covered by the local/no-upload claim above.
+
+Scope clarification updated 2026-11-14. The specification verification date above remains 2026-10-05; this documentation change does not claim a fresh audit of every authority or guarantee acceptance.
